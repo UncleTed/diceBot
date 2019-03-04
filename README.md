@@ -18,12 +18,22 @@ To deactivate it run `deactivate`
 
 ## Configure VSCode 
 ### Extensions
-* Install the Python extension  
-Use the File -> Preferences -> Extensions menu option to open the extensions panel. Search for the Python extension. Push the install button. You may have to reload VSCode.
+Use the File -> Preferences -> Extensions menu option to open the extensions panel. Search for the extension name and push the green install button. You may have to reload VSCode. Install the following extensions:
+* Python  
+* Code-Runner
+
 ### Settings
 * Add the python virtual environment to VSCode  
 Type the settings key (crtl ,) to open the settings window in VSCode. Or use the File -> Preferences -> Settings menu option. This will open two panels: User Settings and Workspace Settings. Click on Workspace Settings.
 Search for _python.pythonpath_ and then enter the following: `env/bin/python`
+
+* Change the default python command that Code-Runner uses to your virtual python environment
+Open the workspace settings file located in .vscode/settings.json and add the json snippet:
+```
+"code-runner.executorMap": {
+        "python":  "env/bin/python",
+    }
+```
 
 ## Required Python Packages
 The file requirements.txt has the list of required python packages. Install the packages with the command: `pip install -r requirements.txt`
