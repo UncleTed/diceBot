@@ -18,3 +18,7 @@ package:
   include:
     - src/handler.py
     - src/rollDice.py
+  exclude:
+    - env/**
+    - hello/**
+    - README.md
