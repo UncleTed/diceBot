@@ -1,0 +1,20 @@
+service: diceBot 
+
+provider:
+  name: aws
+  runtime: python3.7
+  region: us-west-2
+
+
+functions:
+  rollDice:
+    handler: handler.rollTheBones
+    events:
+      - http:
+          path: rollDice
+          method: get
+
+package:
+  include:
+    - src/handler.py
+    - src/rollDice.py
