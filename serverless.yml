@@ -13,7 +13,12 @@ functions:
       - http:
           path: rollDice
           method: get
-
+  showHistogram:
+    handler: handler.showHistogram
+    events:
+        - http:
+            path: showHistogram
+            method: get
 package:
   include:
     - src/handler.py

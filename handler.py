@@ -1,11 +1,12 @@
 import json
-from src.rollDice import roll_d20
+from src.rollDice import roll_dice
+from src.rollDice import ascii_histogram
 
 
 def rollTheBones(event, context):
 
     body = {
-        "you rolled a ":  roll_d20(),
+        "you rolled a ":  roll_dice(),
         "event": event
     }
 
@@ -15,6 +16,14 @@ def rollTheBones(event, context):
     }
     return response
 
+
+def showHistogram(event, context):
+    histogram = ascii_histogram()
+    response = {
+        "statusCode": 200,
+        "body": histogram
+    }
+    return response
 
 if __name__ == "__main__":
     print(rollTheBones(None, None))

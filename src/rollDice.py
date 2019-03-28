@@ -15,14 +15,14 @@ def stats(number_of_times):
     return rolls
 
 
-def ascii_histogram(data):
+def ascii_histogram():
+    data = stats(1000)
     output = []
     for index in sorted(data):
         output.append('{0:5d} {1}'.format(index, '+' * (data[index]//10)))
     
-    print('\n'.join(output))
-    return output
+    return '\n'.join(output)
 
 if __name__ == "__main__":
-    ascii_histogram(stats(100000))
+    ascii_histogram()
 
