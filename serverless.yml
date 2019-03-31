@@ -25,5 +25,4 @@ package:
     - src/rollDice.py
   exclude:
     - env/**
-    - hello/**
     - README.md
