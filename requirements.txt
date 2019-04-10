@@ -1,2 +1,4 @@
 numpy
 oauth2
+requests 
+requests_oauthlib

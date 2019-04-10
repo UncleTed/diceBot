@@ -13,16 +13,27 @@ functions:
       - http:
           path: rollDice
           method: get
+      - http:
+          path: rollDice
+          method: post
   showHistogram:
     handler: handler.showHistogram
     events:
         - http:
             path: showHistogram
             method: get
+
+  webhook:
+    handler: handler.webhook
+    events:
+      - http:
+          path: webhook
+          method: get
+      - http:
+          path: webhook
+          method: post
+
 package:
-  include:
-    - src/handler.py
-    - src/rollDice.py
   exclude:
     - env/**
     - README.md

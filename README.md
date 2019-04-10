@@ -58,6 +58,29 @@ Deploy your project with
 
 
 
+## Twitter commands
+https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/api-reference/aaa-premium
+
+Register a webhook:
+webhook_endpoint = urllib.parse.quote_plus('https://fm0fxa866m.execute-api.us-west-2.amazonaws.com/dev/webhook')
+https://api.twitter.com/1.1/account_activity/all/dev/webhooks.json?url={}'.format(webhook_endpoint)
+
+Subscribe your webhook to the account activity API
+https://api.twitter.com/1.1/account_activity/all/dev/subscriptions.json'
+
+
+List your subscriptions
+curl --request GET \
+ --url https://api.twitter.com/1.1/account_activity/all/dev/subscriptions/list.json \
+ --header 'authorization: Bearer Token'
+
+
+## Bibliography
+* https://realpython.com/python-virtual-environments-a-primer/
+* https://medium.com/@nragusa/getting-started-with-the-twitter-account-activity-api-beta-395e9498af81
+
+
+
 
 
 
