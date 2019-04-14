@@ -29,11 +29,18 @@ functions:
       - http:
           path: webhook
           method: get
+
+  directMessage:
+    handler: handler.directMessage
+    events:
       - http:
           path: webhook
           method: post
+  
 
 package:
   exclude:
+    - test/**
+    - src/twitter.py
     - env/**
     - README.md
