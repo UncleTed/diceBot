@@ -16,6 +16,8 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+.vscode/
+node_modules/
 
 # Serverless directories
 .serverless

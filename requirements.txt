@@ -1,4 +1,4 @@
-oauth2
-requests 
-requests_oauthlib
-python-twitter
+oauth2==1.9.0.post1
+requests==2.21.0
+requests_oauthlib==1.2.0
+python-twitter==3.5

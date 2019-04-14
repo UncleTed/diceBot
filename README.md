@@ -35,6 +35,21 @@ Open the workspace settings file located in .vscode/settings.json and add the js
     }
 ```
 
+* Configure VSCode to use the python unittest framework
+Open the workspace settings file located in .vscode/settings.json and add the json snippet:
+```
+ "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        "./test",
+        "-p",
+        "*_test.py"
+    ],
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.unittestEnabled": true
+```
+
 ## Required Python Packages
 The file requirements.txt has the list of required python packages. Install the packages with the command: `pip install -r requirements.txt`
 
