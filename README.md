@@ -66,7 +66,7 @@ aws_secret_access_key = ...
 ```
 
 Export the environment variables to set the aws profile you wish to use
-`export AWS_PROFILe="serverless" && export AWS_DEFAULT_REGION=us-west-2`
+`export AWS_PROFILE="serverless" && export AWS_DEFAULT_REGION=us-west-2`
 
 Deploy your project with
 `serverless deploy -r us-west-2` because sometime serverless doesn't obey and puts your lamba into the default us-east-1 region. jerk.
