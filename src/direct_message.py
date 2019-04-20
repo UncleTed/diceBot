@@ -24,5 +24,6 @@ def respond_to_direct_message(eventBody):
     text = 'roger roger {}'.format(screen_name)
     sentDm = api.PostDirectMessage(user_id=sent_from,text=text, return_json=True)
     print("this was sent_ ", sentDm)
+    return dm
 
         

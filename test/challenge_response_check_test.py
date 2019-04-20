@@ -32,4 +32,4 @@ class challenge_response_check_test(unittest.TestCase):
             }
         }
         actual = perform_challenge_response_check(event)
-        self.assertEquals(None, actual)
+        self.assertEqual(None, actual)
