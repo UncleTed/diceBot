@@ -55,7 +55,7 @@ def directMessage(event, context):
     elif 'direct_message_events' in event['body']:
         theBody = json.loads(event['body'])
         if theBody['direct_message_events'][0]['message_create']['target']['recipient_id'] == '1111446422707204096':
-            respond_to_direct_message()
+            respond_to_direct_message(theBody)
         else: 
             print('from myself')
 

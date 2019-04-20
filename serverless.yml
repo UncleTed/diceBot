@@ -2,7 +2,7 @@ service: diceBot
 
 provider:
   name: aws
-  runtime: python3.6
+  runtime: python3.7
   region: us-west-2
 
 plugins:
@@ -45,4 +45,5 @@ package:
     - test/**
     - src/twitter.py
     - env/**
+    - node_modules/**
     - README.md
