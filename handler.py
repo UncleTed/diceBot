@@ -45,7 +45,6 @@ def webhook(event, context):
     
 
 def directMessage(event, context):
-    print('the type of event is ', type(event))
     response = {
         'statusCode': 200,
         'body': json.dumps(event)
