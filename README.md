@@ -38,16 +38,19 @@ Open the workspace settings file located in .vscode/settings.json and add the js
 * Configure VSCode to use the python unittest framework
 Open the workspace settings file located in .vscode/settings.json and add the json snippet:
 ```
- "python.unitTest.unittestArgs": [
+ "python.testing.unittestArgs": [
         "-v",
         "-s",
         "./test",
         "-p",
         "*_test.py"
     ],
-    "python.unitTest.pyTestEnabled": false,
-    "python.unitTest.nosetestsEnabled": false,
-    "python.unitTest.unittestEnabled": true
+    "python.testing.pyTestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.enabled": true
 ```
 
 ## Required Python Packages
