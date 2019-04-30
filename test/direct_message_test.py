@@ -17,10 +17,4 @@ class direct_message_test(unittest.TestCase):
         with patch('twitter.Api.PostDirectMessage') as mock_post:
             respond_to_direct_message(json.loads(event['body']))
             mock_post.assert_called_with(user_id='125505243', text='roger roger UncleTedly', return_json=False)
-
-        dm = respond_to_direct_message(event['body'])
-        self.assertIsInstance(dm, twitter.models.DirectMessage, msg='Instead it was a {}'.format(type(dm)))
-        # self.assertEqual('roger roger UncleTedly',dm.text)
-        # self.assertEqual('1111446422707204096', dm.sender_id)
-
     
