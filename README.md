@@ -74,6 +74,8 @@ Export the environment variables to set the aws profile you wish to use
 Deploy your project with
 `serverless deploy -r us-west-2` because sometime serverless doesn't obey and puts your lamba into the default us-east-1 region. jerk.
 
+## Running unit tests in the terminal
+python -m unittest discover -s ./test -p *_test.py
 
 
 ## Twitter commands

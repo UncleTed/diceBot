@@ -18,6 +18,7 @@ var/
 *.egg
 .vscode/
 node_modules/
+*.pyc
 
 # Serverless directories
 .serverless
