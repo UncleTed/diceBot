@@ -1,7 +1,4 @@
 import json
-import base64
-import hmac
-import hashlib
 
 from src.rollDice import roll_dice
 from src.rollDice import ascii_histogram
@@ -42,7 +39,7 @@ def showHistogram(event, context):
 def webhook(event, context):
     print(event)
     return perform_challenge_response_check(event)
-    
+
 
 def directMessage(event, context):
     response = {
@@ -56,14 +53,13 @@ def directMessage(event, context):
         theBody = json.loads(event['body'])
         if theBody['direct_message_events'][0]['message_create']['target']['recipient_id'] == '1111446422707204096':
             respond_to_direct_message(theBody)
-        else: 
+        else:
             print('from myself')
 
     else:
         print(event['body'])
-        
+
     return response
-        
 
 
 if __name__ == "__main__":

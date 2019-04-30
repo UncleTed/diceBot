@@ -13,22 +13,16 @@ ACCESS_SECRET = secrets['ACCESS_SECRET']
 
 def respond_to_direct_message(eventBody):
     api = twitter.Api(consumer_key=CONSUMER_KEY,
-                  consumer_secret=CONSUMER_SECRET,
-                  access_token_key=ACCESS_TOKEN,
-                  access_token_secret=ACCESS_SECRET)
+                        consumer_secret=CONSUMER_SECRET,
+                        access_token_key=ACCESS_TOKEN,
+                        access_token_secret=ACCESS_SECRET)
 
-
-    eventBodyAsJson = json.loads(json.dumps(eventBody))
-    dm = twitter.DirectMessage.NewFromJsonDict(eventBodyAsJson)
-    print("type of eventBodyAsJson {}".format(type(eventBodyAsJson)))
-    print('type of dm {}'.format(type(dm)))
-    print('the dm is {}'.format(dm))
+    dm = twitter.DirectMessage.NewFromJsonDict(eventBody)
+    
 
     sent_from = eventBody['direct_message_events'][0]['message_create']['sender_id']
     screen_name = eventBody['users'][sent_from]['screen_name']
     text = 'roger roger {}'.format(screen_name)
-    sentDm = api.PostDirectMessage(user_id=sent_from,text=text, return_json=False)
+    sentDm = api.PostDirectMessage(user_id=sent_from, text=text, return_json=False)
     print("this was sent_ ", sentDm)
     return sentDm
-
-        
