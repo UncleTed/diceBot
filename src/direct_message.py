@@ -18,6 +18,7 @@ def respond_to_direct_message(eventBody):
                         access_token_secret=ACCESS_SECRET)
 
     dm = twitter.DirectMessage.NewFromJsonDict(eventBody)
+    
 
     sent_from = eventBody['direct_message_events'][0]['message_create']['sender_id']
     screen_name = eventBody['users'][sent_from]['screen_name']

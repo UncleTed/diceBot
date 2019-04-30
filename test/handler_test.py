@@ -1,22 +1,22 @@
 import unittest
-import json
-import sys
-import os
-
-from handler import directMessage
-
+import ast
+import handler
+from unittest.mock import Mock
+from unittest.mock import patch
 
 class handler_test(unittest.TestCase):
-    def test_respond_to_directMessage(self):
-        jsonFile = './test_data/direct_messages/direct_message.json'
+    def test_direct_message(self):
+        mock_respond = Mock()
+        jsonFile = './test_data/direct_messages/direct_message.txt'
         with open(jsonFile) as f:
             resp_data = f.read()
-        
-        message = directMessage(resp_data, {})
-        # print(message)
+        self.assertEqual(4510, len(resp_data))
+        self.assertIsInstance(resp_data, str)
 
-    def test_current_working_directory(self):
-        print(sys.path)
+        with patch('src.direct_message.respond_to_direct_message') as mock_respond:
+            message = handler.directMessage(ast.literal_eval(resp_data), {})
+            mock_respond.assert_called_with('foo')
+        # print(message)
 
 
         
