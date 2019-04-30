@@ -3,6 +3,7 @@ import json
 import twitter
 from src.direct_message import respond_to_direct_message
 
+
 class direct_message_test(unittest.TestCase):
 
     def test_respond(self):
@@ -12,5 +13,5 @@ class direct_message_test(unittest.TestCase):
 
         dm = respond_to_direct_message(event['body'])
     #     # print(dm)
-        self.assertEqual(1,dm)
-    
+        self.assertIsInstance(dm, twitter.DirectMessage)
+        # self.assertEqual('foo', dm)
