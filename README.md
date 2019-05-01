@@ -53,6 +53,9 @@ Open the workspace settings file located in .vscode/settings.json and add the js
     "python.linting.enabled": true
 ```
 
+* Turn off Code Lens in the editor 
+`"editor.codeLens": false`
+
 ## Required Python Packages
 The file requirements.txt has the list of required python packages. Install the packages with the command: `pip install -r requirements.txt`
 
